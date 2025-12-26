@@ -1,0 +1,34 @@
+body{background-color:#000;margin:0;padding:0;overflow:hidden}
+html,body{height:100%}
+video{width:100%;height:100%;max-width:100%}
+.plyr{height:100%}
+
+.modal{position:fixed;top:0;left:0;width:100vw;height:100vh;backdrop-filter:blur(6px);background:rgb(0 0 0 / .4);display:flex;justify-content:center;align-items:center;z-index:9999;animation:fadeIn .5s ease}
+.modal-content{background:rgb(255 255 255 / .05);border:1px solid rgb(255 255 255 / .1);border-radius:20px;padding:30px 25px;width:90%;max-width:400px;text-align:center;color:#f3f4f6;box-shadow:0 8px 32px rgb(0 0 0 / .4);backdrop-filter:blur(12px);transform:scale(.95);animation:scaleIn .4s ease forwards}
+.modal-content h2{font-size:24px;font-weight:700;color:#facc15;margin-bottom:16px}
+.modal-content p{font-size:16px;color:#d1d5db;margin-bottom:24px;line-height:1.5}
+.modal-content strong{color:#fff}
+.modal-content button{width:100%;padding:12px;font-size:16px;border:none;border-radius:12px;margin-bottom:12px;cursor:pointer;transition:.3s}
+
+#joinButton{background:linear-gradient(to right,#3b82f6,#06b6d4);color:#fff;font-weight:500}
+#joinButton:hover{background:linear-gradient(to right,#2563eb,#0891b2);transform:scale(1.02)}
+
+#closeButton{background:rgb(255 255 255 / .1);color:#f3f4f6}
+#closeButton:hover{background:rgb(255 255 255 / .15);transform:scale(1.02)}
+
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes scaleIn{to{transform:scale(1);opacity:1}}
+
+a{text-decoration:none}
+
+.tg-banner{position:absolute;top:16px;left:16px;background:linear-gradient(135deg,rgb(29 161 242 / .85),rgb(0 119 181 / .85));backdrop-filter:blur(8px);border-radius:12px;padding:10px 16px;display:flex;align-items:center;color:#fff;box-shadow:0 8px 24px rgb(0 0 0 / .25);z-index:1000;transition:.3s}
+.tg-banner:hover{transform:translateY(-4px) scale(1.02)}
+.tg-banner img{width:28px;height:28px;margin-right:10px;border-radius:50%;border:2px solid rgb(255 255 255 / .8);transition:.3s}
+.tg-banner span{font-size:15px;font-weight:600}
+
+.error-message{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;background:rgba(255,0,0,.7);padding:20px;border-radius:10px;text-align:center;z-index:10000}
+
+#input-container{position:absolute;top:60px;left:16px;z-index:1000;display:flex;flex-direction:column;width:300px}
+#m3u8Url{padding:10px;margin-bottom:10px;border-radius:5px;border:1px solid #fff;background:rgba(255,255,255,.1);color:#fff}
+#playButton{padding:10px;background:linear-gradient(to right,#3b82f6,#06b6d4);color:#fff;border:none;border-radius:5px;cursor:pointer}
+#playButton:hover{background:linear-gradient(to right,#2563eb,#0891b2)}
