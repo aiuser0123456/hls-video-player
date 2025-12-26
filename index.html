@@ -1,196 +1,64 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Stream Player">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="#">
-    <meta property="og:image" content="#">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Live Stream Player">
-    <meta name="twitter:description" content="">
-    <link rel="canonical" href="#">
-    <title>Stream Player</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.6.12/dist/plyr.css" />
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "SportsEvent",
-            "name": "Live Stream | Player",
-            "startDate": "2025-06-28T16:35:29+00:00",
-            "location": {
-                "@type": "Place",
-                "name": "Online Stream"
-            },
-            "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-            "eventStatus": "https://schema.org/EventScheduled"
-        }
-    </script>
-    <style>
-        body{background-color:#000;margin:0;padding:0;overflow:hidden}html,body{height:100%}video{width:100%;height:100%;max-width:100%}.plyr{height:100%}.modal{position:fixed;top:0;left:0;width:100vw;height:100vh;backdrop-filter:blur(6px);background:rgb(0 0 0 / .4);display:flex;justify-content:center;align-items:center;z-index:9999;animation:fadeIn 0.5s ease}.modal-content{background:rgb(255 255 255 / .05);border:1px solid rgb(255 255 255 / .1);border-radius:20px;padding:30px 25px;width:90%;max-width:400px;text-align:center;color:#f3f4f6;box-shadow:0 8px 32px rgb(0 0 0 / .4);backdrop-filter:blur(12px);transform:scale(.95);animation:scaleIn 0.4s ease forwards}.modal-content h2{font-size:24px;font-weight:700;color:#facc15;margin-bottom:16px}.modal-content p{font-size:16px;color:#d1d5db;margin-bottom:24px;line-height:1.5}.modal-content strong{color:#fff}.modal-content button{width:100%;padding:12px;font-size:16px;border:none;border-radius:12px;margin-bottom:12px;cursor:pointer;transition:all 0.3s ease}#joinButton{background:linear-gradient(to right,#3b82f6,#06b6d4);color:#fff;font-weight:500}#joinButton:hover{background:linear-gradient(to right,#2563eb,#0891b2);transform:scale(1.02)}#closeButton{background:rgb(255 255 255 / .1);color:#f3f4f6}#closeButton:hover{background:rgb(255 255 255 / .15);transform:scale(1.02)}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes scaleIn{to{transform:scale(1);opacity:1}}@media (max-width:480px){.modal-content h2{font-size:20px}.modal-content p{font-size:15px}}a{text-decoration:none}.tg-banner{position:absolute;top:16px;left:16px;background:linear-gradient(135deg,rgb(29 161 242 / .85),rgb(0 119 181 / .85));backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:12px;padding:10px 16px;display:flex;align-items:center;color:#fff;box-shadow:0 8px 24px rgb(0 0 0 / .25);z-index:1000;transition:transform 0.3s ease,box-shadow 0.3s ease}.tg-banner:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 12px 32px rgb(0 0 0 / .35)}.tg-banner img{width:28px;height:28px;margin-right:10px;border-radius:50%;border:2px solid rgb(255 255 255 / .8);transition:transform 0.3s ease}.tg-banner:hover img{transform:rotate(10deg)}.tg-banner span{font-size:15px;font-weight:600;letter-spacing:.4px;text-shadow:0 1px 2px rgb(0 0 0 / .3)}
-        .error-message {position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; background: rgba(255,0,0,0.7); padding: 20px; border-radius: 10px; text-align: center; z-index: 10000;}
-        #input-container {position: absolute; top: 60px; left: 16px; z-index: 1000; display: flex; flex-direction: column; width: 300px;}
-        #m3u8Url {padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #fff; background: rgba(255,255,255,0.1); color: #fff;}
-        #playButton {padding: 10px; background: linear-gradient(to right,#3b82f6,#06b6d4); color: #fff; border: none; border-radius: 5px; cursor: pointer;}
-        #playButton:hover {background: linear-gradient(to right,#2563eb,#0891b2);}
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Stream Player">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="#">
+  <meta property="og:image" content="#">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Live Stream Player">
+  <meta name="twitter:description" content="">
+  <link rel="canonical" href="#">
+
+  <title>Stream Player</title>
+
+  <!-- Plyr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.6.12/dist/plyr.css">
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aiuser0123456/hls-video-player@main/style.css">
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Live Stream | Player",
+    "startDate": "2025-06-28T16:35:29+00:00",
+    "location": {
+      "@type": "Place",
+      "name": "Online Stream"
+    },
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled"
+  }
+  </script>
 </head>
 
 <body>
 
-    <a href="https://t.me/+tsTzlm760chhZDI1" class="tg-banner">
-        <img src="https://i.pinimg.com/originals/31/2a/f9/312af9235aadad69655688eaee97eabf.png" alt="Telegram logo">
-        <span>
-            Join m3u8 player
-        </span>
-    </a>
-    <video id="player" autoplay muted controls crossorigin playsinline poster=""></video>
+  <a href="https://t.me/+tsTzlm760chhZDI1" class="tg-banner">
+    <img src="https://i.pinimg.com/originals/31/2a/f9/312af9235aadad69655688eaee97eabf.png">
+    <span>Join m3u8 player</span>
+  </a>
 
-    <div id="input-container">
-        <input type="text" id="m3u8Url" placeholder="Paste your .m3u8 link here">
-        <button id="playButton">Play .m3u8</button>
-    </div>
+  <video id="player" autoplay muted controls crossorigin playsinline poster=""></video>
 
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.1.4/dist/hls.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/plyr@3.6.12/dist/plyr.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const video = document.getElementById('player');
-            const urlInput = document.getElementById('m3u8Url');
-            const playButton = document.getElementById('playButton');
-            let hls;
-            let plyrPlayer;
+  <div id="input-container">
+    <input type="text" id="m3u8Url" placeholder="Paste your .m3u8 link here">
+    <button id="playButton">Play .m3u8</button>
+  </div>
 
-            function loadVideo(source) {
-                if (!source) {
-                    const errorDiv = document.createElement('div');
-                    errorDiv.className = 'error-message';
-                    errorDiv.innerHTML = 'No stream URL provided. Please enter a .m3u8 URL.';
-                    document.body.appendChild(errorDiv);
-                    setTimeout(() => {
-                        if (errorDiv.parentNode) {
-                            errorDiv.parentNode.removeChild(errorDiv);
-                        }
-                    }, 5000);
-                    return;
-                }
+  <!-- HLS + Plyr -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.1.4/dist/hls.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/plyr@3.6.12/dist/plyr.min.js"></script>
 
-                if (Hls.isSupported()) {
-                    if (hls) hls.destroy(); // Clean up previous HLS instance
-                    hls = new Hls({
-                        maxMaxBufferLength: 100
-                    });
-                    hls.loadSource(source);
-                    hls.attachMedia(video);
-                    hls.on(Hls.Events.MANIFEST_PARSED, () => {
-                        const availableQualities = hls.levels.map(level => level.height);
-                        const defaultQuality = availableQualities[0];
+  <!-- Your JS -->
+  <script src="https://cdn.jsdelivr.net/gh/aiuser0123456/hls-video-player@main/script.js"></script>
 
-                        if (plyrPlayer) plyrPlayer.destroy(); // Clean up previous Plyr
-                        plyrPlayer = new Plyr(video, {
-                            controls: ['play-large', 'play', 'mute', 'volume', 'settings',
-                                'fullscreen', 'pip'
-                            ],
-                            quality: {
-                                default: defaultQuality,
-                                options: availableQualities,
-                                forced: true,
-                                onChange: (quality) => {
-                                    hls.levels.forEach((level, levelIndex) => {
-                                        if (level.height === quality) {
-                                            hls.currentLevel = levelIndex;
-                                        }
-                                    });
-                                }
-                            }
-                        });
-                        video.play();
-                    });
-                } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                    video.src = source;
-                    if (plyrPlayer) plyrPlayer.destroy();
-                    plyrPlayer = new Plyr(video, {
-                        controls: ['play-large', 'play', 'mute', 'volume', 'settings',
-                            'fullscreen', 'pip'
-                        ]
-                    });
-                    video.addEventListener('loadedmetadata', () => {
-                        video.play();
-                    });
-                } else {
-                    document.body.innerHTML = '<p>Your browser does not support HLS playback.</p>';
-                }
-
-                document.addEventListener('fullscreenchange', () => {
-                    if (document.fullscreenElement) {
-                        if (screen.orientation && screen.orientation.lock) {
-                            screen.orientation.lock('landscape').catch(err => {
-                                console.error('Error locking orientation:', err);
-                            });
-                        }
-                    } else {
-                        if (screen.orientation && screen.orientation.unlock) {
-                            screen.orientation.unlock().catch(err => {
-                                console.error('Error unlocking orientation:', err);
-                            });
-                        }
-                    }
-                });
-            }
-
-            // Check for query param first
-            function getQueryParam(param) {
-                const urlParams = new URLSearchParams(window.location.search);
-                return urlParams.get(param);
-            }
-            const urlParam = getQueryParam('url');
-            let initialSource = "https://zd.strmd.top/secure/HrDcTAZRSHOimBNsgpvQQeAuuGEYRvPH/hotel/stream/2nd-odi-england-vs-south-africa/2/playlist.m3u8";
-            if (urlParam) {
-                initialSource = decodeURIComponent(urlParam);
-                urlInput.value = initialSource; // Pre-fill input if query param is present
-            }
-            loadVideo(initialSource); // Load initial video
-
-            playButton.addEventListener('click', () => {
-                const source = urlInput.value.trim();
-                loadVideo(source);
-            });
-        });
-        
-        window.addEventListener("load", function () {
-            if (window.confirm("Join m3u8 player for more updates")) {
-                window.location.href = "https://t.me/+tsTzlm760chhZDI1";
-            }
-        });
-
-        window.onload = () => {
-            const container = document.createElement('div');
-            container.id = 'popup-container';
-            document.body.appendChild(container);
-            const popup = document.createElement('div');
-            popup.classList.add('modal');
-
-            popup.innerHTML = `
-            <div class="modal-content">
-              <h2>Support Us!</h2>
-              <p>Join our Telegram channel <br><strong>m3u8 player</strong> for more updates.</p>
-              <button id="joinButton">Join Now and support us</button>
-              <button id="closeButton">Already Joined</button>
-            </div>
-            `;
-
-            container.appendChild(popup);
-            popup.querySelector('#joinButton').onclick = () => {
-                window.open("https://t.me/+tsTzlm760chhZDI1", "_blank");
-            };
-
-            popup.querySelector('#closeButton').onclick = () => {
-                popup.remove();
-            };
-        };
-    </script>
 </body>
 </html>
